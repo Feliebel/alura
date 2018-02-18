@@ -5,24 +5,26 @@ import $ from 'jquery';
 
 class App extends Component {
 
-  constructor(){
+  constructor() {
     super();
-    this.state = {lista: []};
+    this.state = { lista: [] };
   }
 
-  componentWillMount(){
+  componentWillMount() {
+    console.log("didMount");
     $.ajax({
-        url:"http://cdc-react.herokuapp.com/api/autores",
-        dataType: 'json',
-        success:function(resposta){
-          console.log(resposta);
-          this.setState({lista:resposta});
-        }.bind(this)
-      }
+      url: "http://cdc-react.herokuapp.com/api/autores",
+      dataType: 'json',
+      success: function (resposta) {
+        console.log("chegou a resposta");
+        this.setState({ lista: resposta });
+      }.bind(this)
+    }
     );
   }
 
   render() {
+    console.log("render");
     return (
       <div id="layout">
         <a href="#menu" id="menuLink" className="menu-link">
@@ -77,13 +79,13 @@ class App extends Component {
                 </thead>
                 <tbody>
                   {
-                    this.state.lista.map(function(autor){
+                    this.state.lista.map(function (autor) {
                       return (
-                         <tr>
-                           <td>{autor.nome}</td>
-                           <td>{autor.email}</td>
-                         </tr> 
-                      ); 
+                        <tr key={autor.id}>
+                          <td>{autor.nome}</td>
+                          <td>{autor.email}</td>
+                        </tr>
+                      );
                     })
                   }
                 </tbody>
