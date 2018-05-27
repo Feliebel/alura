@@ -1,0 +1,12 @@
+C:\Users\felie\Desktop\Alura\react\react-1\cdc-admin
+
+- npm install
+- npm start
+
+GIT:
+https://github.com/alberto-alura/cdcadmin-api
+
+API:
+
+https://cdc-react.herokuapp.com/api/autores
+https://cdc-react.herokuapp.com/api/livros
