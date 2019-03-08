@@ -1,4 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-ReactDOM.render(<h1>Olá React</h1>, document.getElementById('app'))
+import Family from './family'
+import Member from './member'
+
+ReactDOM.render(
+    <Family lastName='Silva'>
+        <Member name='Guilherme' />
+        <Member name='Rafael' />
+        <Member name='Julia' />
+    </Family>
+, document.getElementById('app'))
